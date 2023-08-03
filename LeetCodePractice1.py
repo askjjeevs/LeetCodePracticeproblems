@@ -49,7 +49,8 @@ def twoSum (nums, target):
 # try a string conversion solution first
 
 
-"""Given an array nums. We define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]).
+"""1480. Running Sum of 1D Array
+Given an array nums. We define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]).
 
 Return the running sum of nums.
 Input: nums = [1,2,3,4]
@@ -78,7 +79,8 @@ def runningSum(nums):
     return nums 
             
 
-"""You are given an m x n integer grid accounts where accounts[i][j] is the amount of money the i​​​​​​​​​​​th​​​​ customer has in the j​​​​​​​​​​​th​​​​ bank. Return the wealth that the richest customer has.
+"""1672. Richest Customer Wealth
+You are given an m x n integer grid accounts where accounts[i][j] is the amount of money the i​​​​​​​​​​​th​​​​ customer has in the j​​​​​​​​​​​th​​​​ bank. Return the wealth that the richest customer has.
 
 A customer's wealth is the amount of money they have in all their bank accounts. The richest customer is the customer that has the maximum wealth.
 
@@ -110,7 +112,8 @@ def richestCustomer(accounts):
     
     return maxWealth
 
-"""Given an integer n, return a string array answer (1-indexed) where:
+"""412. Fizz Buzz
+Given an integer n, return a string array answer (1-indexed) where:
 
 answer[i] == "FizzBuzz" if i is divisible by 3 and 5.
 answer[i] == "Fizz" if i is divisible by 3.
@@ -147,3 +150,40 @@ def fizzBuzzNum(n):
             fizz_buzz_result.append(str(i))
         
     return fizz_buzz_result
+
+"""1342. Number of Steps to Reduce a Number to Zero
+Given an integer num, return the number of steps to reduce it to zero.
+
+In one step, if the current number is even, you have to divide it by 2, otherwise, you have to subtract 1 from it.
+
+Input: num = 123
+Output: 12
+
+Input: num = 14
+Output: 6
+Explanation: 
+Step 1) 14 is even; divide by 2 and obtain 7. 
+Step 2) 7 is odd; subtract 1 and obtain 6.
+Step 3) 6 is even; divide by 2 and obtain 3. 
+Step 4) 3 is odd; subtract 1 and obtain 2. 
+Step 5) 2 is even; divide by 2 and obtain 1. 
+Step 6) 1 is odd; subtract 1 and obtain 0."""
+
+# assign a variable 'steps' as a count to 0 
+# begin a while loop, set condition != 0
+#if even (num % 2 = 0 ) num //=2
+#else (num -= 1)
+#increase count by 1 
+
+def num_steps_to_zero(num):
+
+    steps = 0 
+    while num !=0:
+        if num % 2 == 0:
+            num //= 2
+        else:
+            num -= 1
+        steps +=1
+    
+    return steps 
+
