@@ -14,7 +14,6 @@ def print_word_and_first_letter(word_list):
     for word in word_list:
         print(word[0], word)
 
-
 """ #3 
 Write a function that takes in a list of numbers. It should print every other number, starting with the number at index 0.
 """
@@ -35,7 +34,6 @@ def print_every_other_number(num_list):
         if i % 2 ==0:
             print(num)
 
-
 """ #4
 Write a function that takes in a list and an item. It should return True if the list contains the item. Otherwise, return False.
 """
@@ -44,7 +42,6 @@ def is_item_in_list(item_list, item):
     for thing in item_list:
         if thing == item:
             return True
-
 
 """ #5
 Write a function that takes in a string and returns the length of that string. You cannot use the len function.
