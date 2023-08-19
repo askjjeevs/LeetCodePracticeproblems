@@ -11,7 +11,6 @@
 def longeststringinlst(lstofstrings):
 
     longeststr = ""
-    
     for str in lstofstrings:
         if len(str) > len(longeststr):
             longeststr = str
@@ -129,7 +128,7 @@ def is_palindrome(string):
     
     return True 
 
-""" #1
+""" 
 Write a function that takes in two arguments: a list of numbers and a number. It should return the largest number in the list that is smaller than the given number. For example:
 [1, 300, 3, 5, 70], 100 => 70
 """
@@ -150,7 +149,7 @@ def largest_num_not_num(num_list, num):
     return largest_num
 
 
-""" #2
+"""
 Write a function that takes in a list of numbers. It should return True if any two numbers in the list add to 0.
 """
 # Is it likely that the list could have more than one pair of combinations that add up to 0 ? Can the list have duplicate numbers
@@ -173,27 +172,63 @@ def pair_adding_to_zero(num_list):
     return False 
             
 
-""" #3
+""" 
 A string is a pangram if it contains every letter in the alphabet at least once. For example, this sentence is a pangram:
 The quick brown fox jumps over the lazy dog.
 Write a function that takes in a string and returns True if the string is a pangram.
 """
+# string of alphabets
+# covert sentence to lower case 
+# if char in sentence not in alphabet:
+# return True 
+# alternatively use .isalpha()
 
+def is_pangram(sentence):
+    sentence = sentence.lower
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    for char in alphabet:
+        if char not in sentence:
+            return False
 
-""" #4
+    return True
+
+""" 
 Write a function that takes in a number. Return a number with the digits of the given number, but in reverse order. For example:
 123 => 321
 Hint:
 One way to do this is to (ab)use the fact that you can typecast an integer into a string.
 """
+# convert the num to str (num_string)
+# initialize empty reversed_nums_str to hold reversed nums 
+# for loop to iterate over the num_string
+# use range to generate the indices in reverse order
+# last digit  == len(num_string) - 1
+# last digit , the index of the last digit, step value to move backwards through range(len(num_string)-1, -1)
+# access the digit at index i through num_string[i]
+# append reversed_nums_str with digit at i
 
-""" #5
+def reversed_num(num): #iterate through the string and create new string character by character
+    num_string = string(num)
+    reversed_nums_str = ""
+
+    for i in range(len(num_string)-1, -1, -1):
+        reversed_nums_str += num_string[i]
+
+        return int(reversed_nums_str)
+
+def reverse_ordered_digits(num): #directly reverse the entire string by slicing 
+    reversed_num = string(num)[::-1]
+    return int(reversed_num)
+
+""" 
 Write a function that takes in a string. It should return a string where consecutive repeating characters have been truncated. For example:
 "aaaabbbbbbcccc" => "abc"
 "caaaat" => "cat"
 """
+# could use a set method 
+# convert the string to a set - should remove all the duplicate 
 
-""" #1
+""" 
 Python programmers write variable names in snake case, where each word is lowercase and joined by underscores. For example, if you were to write “very hungry caterpillar” in snake case, you’d write very_hungry_caterpillar.
 JavaScript programmers write variable names in camel case, where the initial word is lowercase and other words are capitalized. For example, if you were to write “very hungry caterpillar” in camel case you’d write veryHungryCaterpillar.
 Write a function that converts a string in snake case to a string in camel case.
@@ -201,7 +236,7 @@ Write a function that converts a string in snake case to a string in camel case.
 
 
 
-""" #2
+""" 
 Write a function that takes in a phrase and returns a dictionary that can be used to lookup words by word lengths.
 For example, the phrase "cute cats chase funny rats" should return a dictionary like so:
 {
@@ -212,14 +247,14 @@ Notice that the keys of the dictionary above are integers and its values are set
 """
 
 
-""" #5
+""" 
 Write a function that takes in a list and reverses it in-place (without creating a new list).
 Hint:
 To swap two values, you can use this syntax:
 a, b = b, a
 """
 
-""" #4
+"""
 Write a function that takes in two strings and returns True if the strings are anagrams of one another. For example,
 "moon", "noom" => True
 "bat", "snack" => False
@@ -227,7 +262,7 @@ Write a function that takes in two strings and returns True if the strings are a
 "", "" => True
 """
 
-""" #5
+""" 
 Write a function that prints an encrypted message.
 Using this method, the message HOT SAUCE would look like this:
 HTAC
